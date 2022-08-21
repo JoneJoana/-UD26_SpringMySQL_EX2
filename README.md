@@ -1,5 +1,7 @@
 # UD26_SpringMySQL_EX2
 
+mysql://b78e58be24ca34:780dd853@eu-cdbr-west-03.cleardb.net/heroku_7807aaf757129a8
+
 ## API Cientificos
 
 #### GET
