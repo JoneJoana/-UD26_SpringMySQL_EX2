@@ -26,7 +26,7 @@ public class ProyectosServiceImpl implements IProyectosService{
 
 	@Override
 	public Proyectos proyectoXID(String id) {
-		return iProyectosDAO.findById(id).get();
+		return iProyectosDAO.findById(id).orElse(null);
 	}
 
 	@Override

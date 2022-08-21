@@ -26,7 +26,7 @@ public class CientificosServiceImpl implements ICientificosService{
 
 	@Override
 	public Cientificos cientificosXID(String dni) {
-		return iCientificoDAO.findById(dni).get();
+		return iCientificoDAO.findById(dni).orElse(null);
 	}
 
 	@Override

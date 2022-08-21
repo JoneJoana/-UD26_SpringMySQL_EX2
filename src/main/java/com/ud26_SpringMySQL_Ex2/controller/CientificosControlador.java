@@ -48,7 +48,7 @@ public class CientificosControlador {
 	}
 	
 	@DeleteMapping("/cientificos/{dni}")
-	public void eleiminarCientifico(@PathVariable(name="dni")String dni) {
+	public void eliminarCientifico(@PathVariable(name="dni")String dni) {
 		cientificosServiceImpl.eliminarCientificos(dni);
 	}
 	

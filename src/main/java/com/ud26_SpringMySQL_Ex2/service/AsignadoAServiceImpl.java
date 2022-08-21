@@ -26,7 +26,7 @@ public class AsignadoAServiceImpl implements IAsignadoAService {
 
 	@Override
 	public AsignadoA AsignadoAXID(int id) {
-		return iAsignadoADAO.findById(id).get();
+		return iAsignadoADAO.findById(id).orElse(null);
 	}
 
 	@Override
