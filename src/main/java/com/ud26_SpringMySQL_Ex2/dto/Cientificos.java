@@ -22,7 +22,6 @@ public class Cientificos {
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "cientifico")
     private List<AsignadoA> asignadoA;
 	
-	
 	public Cientificos() {}
 	
 	public Cientificos(String dni, String nomApels, List<AsignadoA> asignadoA) {

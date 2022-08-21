@@ -36,29 +36,18 @@ public class AsignadoAControlador{
 	
 	@GetMapping("/asignadoA/{id}")
 	public AsignadoA asignadoAXID(@PathVariable(name="id") int id) {
-		
-		AsignadoA AsignadoAxid= new AsignadoA();
-		
-		AsignadoAxid=asignadoAServiceImpl.AsignadoAXID(id);
-		
-		return AsignadoAxid;
+		return asignadoAServiceImpl.AsignadoAXID(id);
 	}
 	
 	@PutMapping("/asignadoA/{id}")
 	public AsignadoA actualizarAsignadoA(@PathVariable(name="id")int id,@RequestBody AsignadoA AsignadoA) {
 		
-		AsignadoA Asig_selec= new AsignadoA();
-		AsignadoA Asig_act= new AsignadoA();
-		
-		Asig_selec= asignadoAServiceImpl.AsignadoAXID(id);
-		
+		AsignadoA Asig_selec=asignadoAServiceImpl.AsignadoAXID(id);		
 		
 		Asig_selec.setCientifico(AsignadoA.getCientifico());
 		Asig_selec.setProyecto(AsignadoA.getProyecto());
 		
-		Asig_act = asignadoAServiceImpl.guardarAsignadoA(Asig_selec);
-		
-		return Asig_act;
+		return asignadoAServiceImpl.guardarAsignadoA(Asig_selec);
 	}
 	
 	@DeleteMapping("/asignadoA/{id}")

@@ -28,12 +28,7 @@ public class CientificosControlador {
 	
 	@GetMapping("/cientificos/{dni}")
 	public Cientificos cientificoXID(@PathVariable(name="dni") String dni) {
-		
-		Cientificos cientifico= new Cientificos();
-		
-		cientifico=cientificosServiceImpl.cientificosXID(dni);
-		
-		return cientifico;
+		return cientificosServiceImpl.cientificosXID(dni);
 	}
 	
 	@PostMapping("/cientificos")
@@ -44,17 +39,12 @@ public class CientificosControlador {
 	@PutMapping("/cientificos/{dni}")
 	public Cientificos actualizarCientificos(@PathVariable(name="dni")String dni,@RequestBody Cientificos cientifico) {
 		
-		Cientificos cient_selec= new Cientificos();
-		Cientificos cient_act= new Cientificos();
-		
-		cient_selec= cientificosServiceImpl.cientificosXID(dni);
+		Cientificos cient_selec=cientificosServiceImpl.cientificosXID(dni);
 		
 		cient_selec.setNomApels(cientifico.getNomApels());
-		cient_selec.setAsignadoA(cientifico.getAsignadoA());
+		cient_selec.setAsignadoA(cientifico.getAsignadoA());		
 		
-		cient_act = cientificosServiceImpl.guardarCientifico(cient_selec);
-		
-		return cient_act;
+		return cientificosServiceImpl.guardarCientifico(cient_selec);
 	}
 	
 	@DeleteMapping("/cientificos/{dni}")

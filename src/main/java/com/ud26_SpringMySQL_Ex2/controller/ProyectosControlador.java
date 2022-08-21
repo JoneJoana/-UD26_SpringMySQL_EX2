@@ -29,35 +29,24 @@ public class ProyectosControlador {
 
 	@PostMapping("/proyectos")
 	public Proyectos salvarProyectos(@RequestBody Proyectos Proyectos) {
-
 		return proyectoServiceImpl.guardarProyecto(Proyectos);
 	}
 
 	@GetMapping("/proyectos/{id}")
 	public Proyectos ProyectosXID(@PathVariable(name = "id") String id) {
-
-		Proyectos proyectos_xid = new Proyectos();
-
-		proyectos_xid = proyectoServiceImpl.proyectoXID(id);
-
-		return proyectos_xid;
+		return proyectoServiceImpl.proyectoXID(id);
 	}
 
 	@PutMapping("/proyectos/{id}")
 	public Proyectos actualizarProyectos(@PathVariable(name = "id") String id, @RequestBody Proyectos Proyectos) {
 
-		Proyectos p_selec = new Proyectos();
-		Proyectos p_act = new Proyectos();
-
-		p_selec = proyectoServiceImpl.proyectoXID(id);
+		Proyectos p_selec = proyectoServiceImpl.proyectoXID(id);
 
 		p_selec.setNombre(Proyectos.getNombre());
 		p_selec.setHoras(Proyectos.getHoras());
 		p_selec.setAsignadoA(Proyectos.getAsignadoA());
 
-		p_act = proyectoServiceImpl.guardarProyecto(p_selec);
-
-		return p_act;
+		return proyectoServiceImpl.guardarProyecto(p_selec);
 	}
 
 	@DeleteMapping("/proyectos/{id}")
