@@ -11,7 +11,22 @@ e651be8ade4203925ded78f82a838a8cbec91bd4
 ```
 
 ## T27 - BASIC SECURITY (version actual rama main)
-- TOKEN SECURITY - rama TOKEN-SECURITY (ultima veersion)
+- TOKEN SECURITY - rama TOKEN-SECURITY (ultima version)
+
+#### POST LOGIN
+```
+ud27-spring-token.herokuapp.com/login 
+```
+opciones login:
+{
+    "name":"root", 
+    "password":"root"
+}
+
+{
+    "name":"jone", 
+    "password":"1234"
+}
     
 mysql://b78e58be24ca34:780dd853@eu-cdbr-west-03.cleardb.net/heroku_7807aaf757129a8
 
