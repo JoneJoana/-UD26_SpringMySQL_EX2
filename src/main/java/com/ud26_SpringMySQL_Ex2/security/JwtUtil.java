@@ -12,7 +12,6 @@ import java.util.Date;
 
 import static java.util.Collections.emptyList;
 
-import java.time.ZonedDateTime;
 
 public class JwtUtil {
 
@@ -23,10 +22,10 @@ public class JwtUtil {
             .setSubject(username)
 
             // Vamos a asignar un tiempo de expiracion de 1 minuto
-            .setExpiration(Date.from(ZonedDateTime.now().plusMinutes(5).toInstant()))
+            .setExpiration(new Date(System.currentTimeMillis() + 60000))
 
             // Hash con el que firmaremos la clave
-            .signWith(SignatureAlgorithm.HS512, "P@tit0")
+            .signWith(SignatureAlgorithm.HS512, "P@tito")
             .compact();
 
         //agregamos al encabezado el token
@@ -42,8 +41,8 @@ public class JwtUtil {
         // si hay un token presente, entonces lo validamos
         if (token != null) {
             String user = Jwts.parser()
-                    .setSigningKey("P@tit0")
-                    .parseClaimsJws(token.replace("Bearer", "")) //este metodo es el que valida
+                    .setSigningKey("P@tito")
+                    .parseClaimsJws(token.replace("Bearer","")) //este metodo es el que valida
                     .getBody()
                     .getSubject();
 
