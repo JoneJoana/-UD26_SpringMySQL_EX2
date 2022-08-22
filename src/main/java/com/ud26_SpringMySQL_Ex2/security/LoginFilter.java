@@ -27,27 +27,27 @@ public class LoginFilter extends AbstractAuthenticationProcessingFilter {
 	 
 	 @Override
 	 public Authentication attemptAuthentication(
-	            HttpServletRequest req, HttpServletResponse res)
-	            throws AuthenticationException, IOException, ServletException {
+            HttpServletRequest req, HttpServletResponse res)
+            throws AuthenticationException, IOException, ServletException {
 
-	        // obtenemos el body de la peticion que asumimos viene en formato JSON
-	       	InputStream body = req.getInputStream();
+        // obtenemos el body de la peticion que asumimos viene en formato JSON
+       	InputStream body = req.getInputStream();
 
-	        // Asumimos que el body tendrá el siguiente JSON  {"name":"ask", "password":"123"}
-	        // Realizamos un mapeo a nuestra clase User para tener ahi los datos
-	        User user = new ObjectMapper().readValue(body, User.class);
+        // Asumimos que el body tendrá el siguiente JSON  {"name":"ask", "password":"123"}
+        // Realizamos un mapeo a nuestra clase User para tener ahi los datos
+        User user = new ObjectMapper().readValue(body, User.class);
 
-	        // Finalmente autenticamos
-	        // Spring comparará el user/password recibidos
-	        // contra el que definimos en la clase SecurityConfig
-	        return getAuthenticationManager().authenticate(
-	                new UsernamePasswordAuthenticationToken(
-	                        user.getName(),
-	                        user.getPassword(),
-	                        Collections.emptyList()
-	                )
-	        );
-	    }
+        // Finalmente autenticamos
+        // Spring comparará el user/password recibidos
+        // contra el que definimos en la clase SecurityConfig
+        return getAuthenticationManager().authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        user.getName(),
+                        user.getPassword(),
+                        Collections.emptyList()
+                )
+        );
+    }
 	 
 	 @Override
 	 protected void successfulAuthentication(

@@ -15,8 +15,8 @@ import static java.util.Collections.emptyList;
 import java.time.ZonedDateTime;
 
 public class JwtUtil {
-	
-	// Método para crear el JWT y enviarlo al cliente en el header de la respuesta
+
+    // Método para crear el JWT y enviarlo al cliente en el header de la respuesta
     static void addAuthentication(HttpServletResponse res, String username) {
 
         String token = Jwts.builder()
@@ -56,5 +56,4 @@ public class JwtUtil {
         }
         return null;
     }
-
 }
