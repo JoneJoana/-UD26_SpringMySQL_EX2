@@ -1,5 +1,17 @@
 # UD26_SpringMySQL_EX2
 
+## T26 - DEPLOY HEROKU (SIN BASIC AUTHENTICATION)
+
+```
+Commits on Aug 20, 2022
+
+    retoque app properties 
+
+e651be8ade4203925ded78f82a838a8cbec91bd4
+```
+
+## T27 - BASIC SECURITY (version actual)
+
 mysql://b78e58be24ca34:780dd853@eu-cdbr-west-03.cleardb.net/heroku_7807aaf757129a8
 
 ## API Cientificos
