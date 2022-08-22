@@ -67,6 +67,7 @@ ud26-springmysql-ex2.herokuapp.com/api/proyectos/asignadoA/{id}
 ud26-springmysql-ex2.herokuapp.com/api/proyectos/asignadoA
 ```
 #### PUT
+```
 ud26-springmysql-ex2.herokuapp.com/api/proyectos/asignadoA/{id}
 ```
 #### DELETE
